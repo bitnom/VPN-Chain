@@ -40,18 +40,18 @@ of whole chain.
 	bash$ unzip vpnchains-XX.zip
 	bash$ cd vpnchains
 
-1. Edit vpnchains.sh config section. 
+1. Edit vpnchain.sh config section. 
 
 	VPN CHAIN should work with most OpenVPN providers default configs (i tested 3 different ones and all worked 
 	without major changes). If you get 'file not found' errors, try to change keys and certificate paths from relative to absolute in config files.
 
 2. Use sudo to run it:
-		bash$ sudo ./vpnchains.sh 
+		bash$ sudo ./vpnchain.sh 
 
 3. To exit press CTRL+C keys
 
 4. If you enabled firewall blocking then run this command to flush rules:
-	bash$ sudo ./vpnchains.sh flush
+	bash$ sudo ./vpnchain.sh flush
 	
 
 SECURITY WARNING:
