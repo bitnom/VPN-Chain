@@ -21,12 +21,12 @@ done
 
 if [ -n "$UP" ]; then
   if [ -n "$LAST" ]; then
-     /sbin/route add -net 0.0.0.0 netmask 128.0.0.0 gw $6;
-     /sbin/route add -net 128.0.0.0 netmask 128.0.0.0 gw $6;    
+     /sbin/ip route add -net 0.0.0.0 netmask 128.0.0.0 gw $6;
+     /sbin/ip route add -net 128.0.0.0 netmask 128.0.0.0 gw $6;    
      #echo "[DEBUG] /sbin/route add -net 0.0.0.0 netmask 128.0.0.0 gw $6;"
      /etc/openvpn/update-resolv-conf
   else 
-     /sbin/route add -net $2 netmask 255.255.255.255 gw $6;
+     /sbin/ip route add -net $2 netmask 255.255.255.255 gw $6;
      #echo "[DEBUG] /sbin/route add -net $2 netmask 255.255.255.255 gw $6"
   fi
 fi
