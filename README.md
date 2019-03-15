@@ -7,7 +7,7 @@ WARNING: Please read HOW TO USE VPN CHAIN section, because it contains important
 
 
 #### ABOUT VPN CHAIN ####
-VPN Chain is a fork of the original VPNCHAINS bash script. I will be reworking this in either Go or Nim. For now, I will maintain this script and continue to add features and fix bugs.
+VPN Chain is a fork of the original VPNCHAIN bash script. I will be reworking this in either Go or Nim. For now, I will maintain this script and continue to add features and fix bugs.
 
 VPN Chain is bash script which makes chained openvpn connections. You don't need to use virtual machine for this anymore. 
 After chain is completed you can use internet in more secure and private way with all openvpn benefits. 
@@ -37,8 +37,8 @@ of whole chain.
 #### HOW TO USE VPN CHAIN ####
 
 0. Extract files:
-	bash$ unzip vpnchains-XX.zip
-	bash$ cd vpnchains
+	bash$ unzip vpnchain-XX.zip
+	bash$ cd vpnchain
 
 1. Edit vpnchain.sh config section. 
 
