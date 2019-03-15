@@ -10,7 +10,7 @@
 #config[3]=config3.ovpn
 #config[4]=config4.ovpn
 
-verbose=0           # verbose level; from 0 to 6
+verbose=1           # verbose level; from 0 to 6
 enable_firewall=1   # Block outgoing traffic except openvpn servers (HIGHLY RECOMMENDED)
 
 ##
