@@ -119,6 +119,10 @@ it worked for you and what issues did you have (if any).
 
 
 #### CHANGELOG ###
+0.21:
+- Added IPv6 block & restore option.
+- Changed default verbosity to 1.
+
 0.2:
 - Added firewall block option
 - Moved functions to separate file
