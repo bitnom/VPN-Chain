@@ -5,13 +5,14 @@
 ##
 
 # Config array number is used for ordering chain
-#config[1]=config1.ovpn
-#config[2]=config2.ovpn
+config[1]=config1.ovpn
+config[2]=config2.ovpn
 #config[3]=config3.ovpn
 #config[4]=config4.ovpn
 
 verbose=1           # verbose level; from 0 to 6
 enable_firewall=1   # Block outgoing traffic except openvpn servers (HIGHLY RECOMMENDED)
+block_ipv6=1
 
 ##
 ## Don't change anything bellow unless you know what you are doing
@@ -32,6 +33,9 @@ fi
 if [ $enable_firewall -gt 0 ] && [ -f "$firewall_rules_file" ]; then
     FIREWALL flush
     rm $firewall_rules_file
+fi
+if [ $block_ipv6 -gt 0 ]; then
+  echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 fi
 
 # execute function on exit
@@ -119,5 +123,9 @@ fi
 
 let i++;
 done
+
+if [ $block_ipv6 -gt 0 ]; then
+  echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+fi
 
 exit
