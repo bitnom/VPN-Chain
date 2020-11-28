@@ -10,15 +10,17 @@ function CONNECT() {
 # Get available tun devices
 function GET_TUN() {
   client_tun=
-  tun_number=`cat /proc/net/dev | grep tun | head -n 1 | awk '{print substr($1,4,1)}'`
+  tun_number=`ls /sys/class/net | grep tun`
   if [ -z "$tun_number" ]; then
       tun_number=0
     else
+      tun_number=`echo $tun_number |  tr " " "\n" | sort -t= -nr -k3 | tr -d "tun" | head -1`
       let tun_number=$tun_number+1;
   fi
   client_tun="tun$tun_number"
   SHOW info "Client tun: $client_tun";
 }
+
 
 # Check if value exists in array
 function IN_ARRAY() {
